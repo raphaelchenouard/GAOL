@@ -42,13 +42,13 @@
 // FIXME: Using an hexadecimal constant is not portable!
 #define GAOL_FPU_MASK 0x0a3f
 
-#if __APPLE__
+#if AARCH64_LINUX
+#   define CTRLWORD(v) (v).__fpcr
+#elif __APPLE__
 #   define CTRLWORD(v) (v).__control
 #elif IX86_LINUX
 #   define CTRLWORD(v) (v).__control_word
-#elif AARCH64_LINUX
-#   define CTRLWORD(v) (v).__fpcr
-#endif 
+#endif
 
 #if USING_SSE2_INSTRUCTIONS
 #  include <xmmintrin.h>

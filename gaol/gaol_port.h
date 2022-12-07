@@ -37,9 +37,9 @@
 #include "gaol/gaol_config.h"
 #include "gaol/gaol_limits.h"
 
-#if HAVE_FINITE
+//#if HAVE_FINITE
 #  include <cmath>
-#endif
+//#endif
 
 // Alignment on an 'nbytes' bytes boundary
 #if defined(_MSC_VER)
