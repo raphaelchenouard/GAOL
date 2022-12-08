@@ -1,6 +1,7 @@
 doxygen = find_program('doxygen', required : false)
 if not doxygen.found()
   warning('Doxygen not found, no documentation generated!')
+else
   cdata = configuration_data()
   cdata.set('VERSION', meson.project_version())
   cdata.set('TOP_SRCDIR', meson.source_root())
